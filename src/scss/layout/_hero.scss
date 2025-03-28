@@ -1,0 +1,34 @@
+@use '../abstracts';
+@use '../components/button' as *;
+
+  .hero {
+    @include abstracts.display-flex(column, center, flex-start, wrap);
+    max-width: abstracts.$container-secondary;
+
+    &__title {
+        margin-bottom: 35px;
+        margin-top: 10px;
+
+        @include abstracts.for-width(3) {
+          font-size: 2rem;
+        }  
+      }
+
+    &__description {
+        color: abstracts.$color-secondary;
+        margin-bottom: 62px;
+        overflow: visible;
+
+        @include abstracts.for-width(6) {
+          margin-bottom: 40px;
+        }
+      } 
+       
+    &__button {
+        @extend .button;
+      }
+  }
+  
+
+  
+

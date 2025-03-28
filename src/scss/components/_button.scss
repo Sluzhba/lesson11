@@ -1,0 +1,11 @@
+@use '../abstracts';
+
+.button {
+    @include abstracts.display-flex();
+    min-width: 225px;
+    min-height: 65px;
+    background-color: abstracts.$color-primary;
+    text-transform: uppercase;
+    color: abstracts.$color-white;
+    padding: 0.5em;
+  }

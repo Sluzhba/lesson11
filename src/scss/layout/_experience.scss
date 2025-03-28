@@ -1,0 +1,78 @@
+@use '../abstracts';
+@import '../base/helpers';
+
+.experience {
+    @include abstracts.display-flex();
+    background-color: abstracts.$color-primary;
+    color: abstracts.$color-white;
+    min-height: 250px;
+    padding-top: 2.5em; 
+    padding-bottom: 2.5em; 
+
+    @include abstracts.for-width(6) {
+        padding-top: 1.25em; /* 20px */
+        padding-bottom: 1.25em;
+    }
+
+    &__title {
+        @extend .section__title;
+        @extend .visually-hidden;
+    }
+
+    &__container {
+        @include abstracts.display-flex(row,space-between,center,wrap);
+        gap: map-get(abstracts.$gap-map, 'xl');
+
+        @include abstracts.for-width(2) { 
+            justify-content: center; 
+        }
+      }
+
+    &-item {
+        @include abstracts.display-flex();
+        gap: abstracts.$gap;
+
+
+        &__number {
+            font-size: 1.3125rem; /* 21px */
+            font-weight: 500;
+            margin-top: -5px;
+
+            @include abstracts.for-width(4) {
+                font-size: 1rem; 
+                font-weight: 500;
+                margin-top: 0.5em;
+                line-height: 1;
+            }
+        }
+
+        &__image {
+            order: -1;
+          }
+        
+        &__label {
+            @include abstracts.for-width(4) {
+                font-size: 1rem; 
+                font-weight: 400;
+            }
+        }
+        
+        @include abstracts.for-width(2) { 
+            width:25%;
+            justify-content: center; 
+        }
+
+        @include abstracts.for-width(4) {
+            gap: map-get(abstracts.$gap-map, 'sm');
+        }
+
+        @include abstracts.for-width(5) {
+            width:40%;
+        }
+      }
+
+    
+  }
+  
+
+

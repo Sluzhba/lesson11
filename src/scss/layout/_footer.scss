@@ -1,0 +1,36 @@
+@use '../abstracts';
+@use '../base/base' as *;
+
+  .footer {
+    background-color: abstracts.$color-primary;
+    color: abstracts.$color-white;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    padding-left: 0.5em;
+    text-align: left;
+
+    &__author {
+        font-size: 1.3125rem; /* 21px */
+        font-weight: 500;
+        margin-bottom: 10px;
+
+        @include abstracts.for-width(6) {
+          font-size: 1rem; 
+          margin-bottom: 8px;
+          margin-left: -40px;
+        }
+      }
+
+    &__copyright {
+        font-size: 0.8125rem; /* 13px */
+        font-weight: 400;
+
+        @include abstracts.for-width(6) {
+          font-size: 0.625em;
+          margin-left: -40px;
+        }
+      }
+  }
+  
+
+  

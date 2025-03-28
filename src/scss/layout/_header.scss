@@ -1,0 +1,14 @@
+@use '../abstracts';
+
+  .header {
+    background-color: abstracts.$color-gray-light;
+    padding-top: 70px;
+    padding-bottom: 141px;
+    margin-inline: auto;
+    width: 100%;
+
+    @include abstracts.for-width(3) {
+      padding-top: 50px;
+      padding-bottom: 60px;
+    }
+  }

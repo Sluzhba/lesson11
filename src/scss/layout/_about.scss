@@ -1,0 +1,26 @@
+@use '../abstracts';
+@import '../base/helpers';
+
+.about {
+    @extend .section;
+  
+    background-color: abstracts.$color-white;
+
+    @include abstracts.for-width(3) {
+        padding-bottom: 80px;
+    }
+
+    @include abstracts.for-width(6) {
+        padding-bottom: 35px;
+    }
+
+    &__title {
+        @extend .section__title;
+    }
+
+    &__description {
+        @extend .section__description;
+    }
+
+
+  }

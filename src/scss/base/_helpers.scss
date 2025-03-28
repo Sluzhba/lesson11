@@ -1,0 +1,57 @@
+@use '../abstracts';
+
+  .container {
+    width: min(100% - map-get(abstracts.$gap-map, 'xl'), abstracts.$container-primary);
+    margin-inline: auto;
+
+    @at-root &-sm {
+      width: min(100% - map-get(abstracts.$gap-map, 'xl'), abstracts.$container-secondary);
+      margin-inline: auto;
+    }
+
+    @include abstracts.for-width(3) {
+      width: calc(100% - 80px);
+    }
+  }
+
+  .section {
+    padding-top: 110px;
+    padding-bottom: 100px;
+    text-align: center;
+
+    @include abstracts.for-width(3) {
+      padding-top: 60px;
+    }
+
+    @include abstracts.for-width(6) {
+      padding-top: 40px;
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+      }
+
+    &__description {
+        color: abstracts.$color-secondary;
+      }  
+    
+
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    outline: 0;
+    outline-offset: 0;
+  }

@@ -1,0 +1,41 @@
+@use 'variables' as *;
+ 
+  @mixin text-size($type : 'p') {
+    letter-spacing: $letter-spacing;
+    font-family: $font-family;
+    @if $type=='h1' {
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: $line-height;
+    }
+    @else if $type=='h2' {
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: $line-height;
+    }
+    @else {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: $line-height-sm;
+    }
+  }
+
+  @mixin display-flex($direction: row, $justify: center, $align: center, $wrap: wrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+  }
+
+  $w: (1110px, 1032px, 768px, 620px, 480px, 360px);
+
+  @mixin for-width($index) {
+    @media (max-width: nth($w, $index)) { @content; }
+  }
+
+  @for $i from 1 through length($w) {
+    .for-width-#{$i} {
+      @include for-width($i);
+    }
+  }

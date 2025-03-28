@@ -1,0 +1,22 @@
+
+$line-height: 1.64;
+$line-height-sm: 1.5;
+$font-size: 16px;
+$color-black: #000000;
+$color-primary: #34547a;
+$color-secondary: #727272;
+$color-gray-light: #edeef0;
+$color-white: #ffffff;
+$font-family: 'Roboto', sans-serif;
+$letter-spacing: 0.01em;
+$container-primary: 1110px;
+$container-secondary: 540px;
+$gap: 20px;
+$multi: ("sm": 0.5,"lg": 1.5, "xl": 2);
+
+$gap-map: ();
+
+@each $name, $mlt in $multi {
+  $gap-map: map-merge($gap-map, ($name: $gap * $mlt));
+}
+

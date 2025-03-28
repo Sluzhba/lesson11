@@ -1,0 +1,47 @@
+@use '../abstracts';
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+
+  html {  
+    @include abstracts.text-size();  
+  }
+
+  body {
+    margin: 0;
+  }
+  
+  h1 {
+    @include abstracts.text-size('h1');
+
+    
+    @include abstracts.for-width(6) {
+      font-size: 2.5rem;
+    }
+  }
+  
+  h2 {
+    @include abstracts.text-size('h2');
+
+    @include abstracts.for-width(6) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+    color: abstracts.$color-black;
+  }
+
+
+  @include abstracts.for-width(3) {
+    $line-height: 1.2;
+  }
+  
+
+
